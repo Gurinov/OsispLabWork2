@@ -162,9 +162,8 @@ int CerclePrintText(HDC hdc, LPCTSTR str, RECT rect) {
     int y0 = (rect.bottom + rect.top) / 2;
     int a = (rect.right - rect.left) / 2;
     int x = -a;
-    int y = rect.top;
     for (int i = 0; i < static_cast<int>(strlen(str) / 2); i++) {
-        //int y = circleFindY(x, a);
+        int y = circleFindY(x, a);
         TextOut(hdc, x0+x, y0-y, &str[i], 1);
         x += h;
     }
